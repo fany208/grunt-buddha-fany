@@ -37,15 +37,19 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.who
 Type: `String`
-Default value: `',  '`
+Default value: `buddha`
+
+默认使用buddha
 
 A string value that is used to do something with whatever.
 
-#### options.punctuation
+#### options.commentSymbol
 Type: `String`
-Default value: `'.'`
+Default value: `//`
+
+文件拼接使用的注释符
 
 A string value that is used to do something else with whatever else.
 
@@ -57,10 +61,11 @@ In this example, the default options are used to do something with whatever. So 
 ```js
 grunt.initConfig({
   buddha_fany: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+    options: {
+        who: 'buddha',
+        commentSymbol: '//'
     },
+    dist: ['examples/*.js']
   },
 });
 ```
@@ -86,4 +91,4 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+20161024 init
