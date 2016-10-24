@@ -1,34 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/github-dark.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
 
-    <title>Grunt-buddha-fany by fany208</title>
-  </head>
+  <title>Grunt-buddha-fany</title>
+  <meta name="description" content="Buddha&#39;s grace illuminates code as sunshine.">
 
-  <body>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
+</head>
+
+<body>
+
+  <div class="wrapper">
     <header>
-      <div class="container">
-        <h1>Grunt-buddha-fany</h1>
-        <h2>Buddha&#39;s grace illuminates code as sunshine.</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/fany208/grunt-buddha-fany/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/fany208/grunt-buddha-fany/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/fany208/grunt-buddha-fany" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
+      <h1 class="title">Grunt-buddha-fany</h1>
     </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h1>
+    <div id="container">
+      <p class="tagline">Buddha&#39;s grace illuminates code as sunshine.</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/fany208/grunt-buddha-fany/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/fany208/grunt-buddha-fany/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/fany208/grunt-buddha-fany" class="code">View Grunt-buddha-fany on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
 <a id="grunt-buddha-fany" class="anchor" href="#grunt-buddha-fany" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>grunt-buddha-fany</h1>
 
 <blockquote>
@@ -71,18 +79,22 @@
 <a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
 
 <h4>
-<a id="optionsseparator" class="anchor" href="#optionsseparator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>options.separator</h4>
+<a id="optionswho" class="anchor" href="#optionswho" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>options.who</h4>
 
 <p>Type: <code>String</code>
-Default value: <code>',  '</code></p>
+Default value: <code>buddha</code></p>
+
+<p>默认使用buddha</p>
 
 <p>A string value that is used to do something with whatever.</p>
 
 <h4>
-<a id="optionspunctuation" class="anchor" href="#optionspunctuation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>options.punctuation</h4>
+<a id="optionscommentsymbol" class="anchor" href="#optionscommentsymbol" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>options.commentSymbol</h4>
 
 <p>Type: <code>String</code>
-Default value: <code>'.'</code></p>
+Default value: <code>//</code></p>
+
+<p>文件拼接使用的注释符</p>
 
 <p>A string value that is used to do something else with whatever else.</p>
 
@@ -96,10 +108,11 @@ Default value: <code>'.'</code></p>
 
 <div class="highlight highlight-source-js"><pre><span class="pl-smi">grunt</span>.<span class="pl-en">initConfig</span>({
   buddha_fany<span class="pl-k">:</span> {
-    options<span class="pl-k">:</span> {},
-    files<span class="pl-k">:</span> {
-      <span class="pl-s"><span class="pl-pds">'</span>dest/default_options<span class="pl-pds">'</span></span><span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>src/testing<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>src/123<span class="pl-pds">'</span></span>],
+    options<span class="pl-k">:</span> {
+        who<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>buddha<span class="pl-pds">'</span></span>,
+        commentSymbol<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>//<span class="pl-pds">'</span></span>
     },
+    dist<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>examples/*.js<span class="pl-pds">'</span></span>]
   },
 });</pre></div>
 
@@ -128,10 +141,27 @@ Default value: <code>'.'</code></p>
 <h2>
 <a id="release-history" class="anchor" href="#release-history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release History</h2>
 
-<p><em>(Nothing yet)</em></p>
-      </section>
+<p>20161024 init</p>
+        </article>
+      </div>
     </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/fany208" class="avatar"><img src="https://avatars1.githubusercontent.com/u/3197725?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/fany208">fany208</a> maintains <a href="https://github.com/fany208/grunt-buddha-fany">Grunt-buddha-fany</a></p>
 
-    
-  </body>
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/fany208/grunt-buddha-fany/tarball/master" class="tar">tar</a><a href="https://github.com/fany208/grunt-buddha-fany/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
 </html>
